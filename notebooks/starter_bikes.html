@@ -355,7 +355,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="cell-0" class="cell" data-execution_count="9">
+<p><a href="https://colab.research.google.com/github/Jaelibj/JaeliJaussi/blob/main/notebooks/starter_bikes.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<div id="cell-1" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> keras</span>
@@ -371,7 +372,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>numeric_feature_names = [‘age’, ‘thalach’, ‘trestbps’, ‘chol’, ‘oldpeak’] numeric_features = df[numeric_feature_names] numeric_features.head()</p>
 <p>normalizer = tf.keras.layers.Normalization(axis=-1) normalizer.adapt(np.array(numeric_features))</p>
 <p>normalizer(numeric_features.iloc[:3])</p>
-<div id="cell-2" class="cell" data-execution_count="7">
+<div id="cell-3" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -400,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>By comparing validation loss across different runs, we can identify the learning rate that allows the model to learn efficiently and achieve the best predictive performance. Additionally, using a learning rate scheduler helps refine the model by reducing the learning rate once improvement slows, allowing for more precise adjustments.</p>
 <section id="major-trial-and-error-technique" class="level2">
 <h2 class="anchored" data-anchor-id="major-trial-and-error-technique">Major Trial and Error Technique</h2>
-<div id="cell-6" class="cell" data-execution_count="11">
+<div id="cell-7" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/bikes.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -428,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Train/test split</span></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>X_train, X_val, y_train, y_val <span class="op">=</span> train_test_split(X_scaled, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3ed650d8-8905-4186-aabe-9e9c2d0ff0b6" data-execution_count="20">
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3ed650d8-8905-4186-aabe-9e9c2d0ff0b6" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Learning Model Trial</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_model(lr):</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> Sequential([</span>
@@ -474,7 +475,7 @@ Training with learning rate: 0.001
 Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
-<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:106}}" data-outputid="d8705228-abe1-42c2-9160-300b6038e60e" data-execution_count="21">
+<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:106}}" data-outputid="d8705228-abe1-42c2-9160-300b6038e60e" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Results</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lr <span class="kw">in</span> learning_rates:</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history_dict[lr], label<span class="op">=</span><span class="ss">f"lr=</span><span class="sc">{</span>lr<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -495,7 +496,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 <p>When should they pull the bikes out of rotation for cleaning?</p>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="5de9886c-60e8-4a87-c57c-03e5a4f4e16c" data-execution_count="13">
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="5de9886c-60e8-4a87-c57c-03e5a4f4e16c" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Hour</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>hourly <span class="op">=</span> df.groupby(<span class="st">'hr'</span>)[<span class="st">'total'</span>].mean()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -512,7 +513,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="65a07083-0d50-4a04-f36c-dd7ae9a43e5f" data-execution_count="14">
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="65a07083-0d50-4a04-f36c-dd7ae9a43e5f" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Day of Week</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'day_of_week'</span>] <span class="op">=</span> df[<span class="st">'dteday'</span>].dt.dayofweek  <span class="co"># 0 = Monday</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -531,7 +532,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="e8e96480-fa1d-4c61-8835-e15300ca1a38" data-execution_count="15">
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="e8e96480-fa1d-4c61-8835-e15300ca1a38" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Combined Hour and Day</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'total'</span>, index<span class="op">=</span><span class="st">'hr'</span>, columns<span class="op">=</span><span class="st">'day_of_week'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -550,7 +551,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 <p>What can we expect for forcasts into the future? Are we back on track or still recovering?</p>
-<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="efb8c56e-0cb3-4c64-9687-1a8fab36b05a" data-execution_count="16">
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="efb8c56e-0cb3-4c64-9687-1a8fab36b05a" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daily Rentals Over Time</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>daily_totals <span class="op">=</span> df.groupby(<span class="st">'dteday'</span>)[<span class="st">'total'</span>].<span class="bu">sum</span>()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -568,7 +569,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-outputid="0592d10f-3547-447b-8356-c5363fac593f" data-execution_count="17">
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-outputid="0592d10f-3547-447b-8356-c5363fac593f" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average Trends</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>rolling <span class="op">=</span> daily_totals.rolling(window<span class="op">=</span><span class="dv">30</span>).mean()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -585,7 +586,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="f6511782-508d-4641-d4af-2bb38c4e05d7" data-execution_count="18">
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="f6511782-508d-4641-d4af-2bb38c4e05d7" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparing Monthly</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'month'</span>] <span class="op">=</span> df[<span class="st">'dteday'</span>].dt.month</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'month'</span>)[<span class="st">'total'</span>].mean()</span>
@@ -604,7 +605,7 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="98208a1f-edc1-4e44-b600-13d1d216f288" data-execution_count="19">
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="98208a1f-edc1-4e44-b600-13d1d216f288" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Atempting Future Prediction</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> build_model(<span class="fl">0.001</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
