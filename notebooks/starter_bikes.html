@@ -336,8 +336,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-by-step-approach" id="toc-step-by-step-approach" class="nav-link active" data-scroll-target="#step-by-step-approach">Step-by-Step Approach</a>
+  <ul class="collapse">
+  <li><a href="#major-trial-and-error-technique" id="toc-major-trial-and-error-technique" class="nav-link" data-scroll-target="#major-trial-and-error-technique">Major Trial and Error Technique</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -376,7 +385,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.callbacks <span class="im">import</span> ReduceLROnPlateau</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>What approach will we use to find the optimal learning rate?</p>
-<div id="cell-4" class="cell" data-execution_count="11">
+<section id="step-by-step-approach" class="level1">
+<h1>Step-by-Step Approach</h1>
+<ol type="1">
+<li><p>Select a range of learning rates to test (e.g., 0.1, 0.01, 0.001, 0.0001).</p></li>
+<li><p>Train the neural network using each learning rate.</p></li>
+<li><p>Monitor training and validation loss for each model.</p></li>
+<li><p>Compare how quickly and smoothly each model converges.</p></li>
+<li><p>Select the learning rate that achieves the lowest validation loss without instability.</p></li>
+<li><p>Optionally, apply a learning rate scheduler to adjust the rate during training.</p></li>
+</ol>
+<p>Explanation….</p>
+<p>We will use an experimental approach to determine the optimal learning rate. By testing multiple values, we can observe how each one affects model performance. A learning rate that is too high can cause unstable training and prevent the model from converging, while a learning rate that is too low can make training very slow and less effective.</p>
+<p>By comparing validation loss across different runs, we can identify the learning rate that allows the model to learn efficiently and achieve the best predictive performance. Additionally, using a learning rate scheduler helps refine the model by reducing the learning rate once improvement slows, allowing for more precise adjustments.</p>
+<section id="major-trial-and-error-technique" class="level2">
+<h2 class="anchored" data-anchor-id="major-trial-and-error-technique">Major Trial and Error Technique</h2>
+<div id="cell-6" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/bikes.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -404,7 +428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Train/test split</span></span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>X_train, X_val, y_train, y_val <span class="op">=</span> train_test_split(X_scaled, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="cell-5" class="cell" data-outputid="d6b149e9-2625-49e5-d0b2-b69f7d082195" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:567}}" data-execution_count="12">
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3ed650d8-8905-4186-aabe-9e9c2d0ff0b6" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Learning Model Trial</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_model(lr):</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> Sequential([</span>
@@ -441,126 +465,45 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Training with learning rate: 0.1</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/usr/local/lib/python3.12/dist-packages/keras/src/layers/core/dense.py:93: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
-  super().__init__(activity_regularizer=activity_regularizer, **kwargs)</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
+Training with learning rate: 0.1
+
 Training with learning rate: 0.01
 
 Training with learning rate: 0.001
 
 Training with learning rate: 0.0001</code></pre>
 </div>
+</div>
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:106}}" data-outputid="d8705228-abe1-42c2-9160-300b6038e60e" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Results</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lr <span class="kw">in</span> learning_rates:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history_dict[lr], label<span class="op">=</span><span class="ss">f"lr=</span><span class="sc">{</span>lr<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Validation Loss for Different Learning Rates"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Epoch"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Validation Loss"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipython-input-3371990179.py</span> in <span class="ansi-cyan-fg">&lt;cell line: 0&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-fg ansi-bold">     23</span>     model <span class="ansi-blue-fg">=</span> build_model<span class="ansi-blue-fg">(</span>lr<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">     24</span> 
-<span class="ansi-green-fg">---&gt; 25</span><span class="ansi-red-fg">     history = model.fit(
-</span><span class="ansi-green-fg ansi-bold">     26</span>         X_train<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg ansi-bold">     27</span>         validation_data<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">(</span>X_val<span class="ansi-blue-fg">,</span> y_val<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/keras/src/utils/traceback_utils.py</span> in <span class="ansi-cyan-fg">error_handler</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-fg ansi-bold">    115</span>         filtered_tb <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-fg ansi-bold">    116</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 117</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    118</span>         <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg ansi-bold">    119</span>             filtered_tb <span class="ansi-blue-fg">=</span> _process_traceback_frames<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>__traceback__<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/keras/src/backend/tensorflow/trainer.py</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-fg">(self, x, y, batch_size, epochs, verbose, callbacks, validation_split, validation_data, shuffle, class_weight, sample_weight, initial_epoch, steps_per_epoch, validation_steps, validation_batch_size, validation_freq)</span>
-<span class="ansi-green-fg ansi-bold">    375</span>                 <span class="ansi-green-fg">for</span> step<span class="ansi-blue-fg">,</span> iterator <span class="ansi-green-fg">in</span> epoch_iterator<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg ansi-bold">    376</span>                     callbacks<span class="ansi-blue-fg">.</span>on_train_batch_begin<span class="ansi-blue-fg">(</span>step<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 377</span><span class="ansi-red-fg">                     </span>logs <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>train_function<span class="ansi-blue-fg">(</span>iterator<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    378</span>                     callbacks<span class="ansi-blue-fg">.</span>on_train_batch_end<span class="ansi-blue-fg">(</span>step<span class="ansi-blue-fg">,</span> logs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    379</span>                     <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>stop_training<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/keras/src/backend/tensorflow/trainer.py</span> in <span class="ansi-cyan-fg">function</span><span class="ansi-blue-fg">(iterator)</span>
-<span class="ansi-green-fg ansi-bold">    218</span>                 iterator<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">(</span>tf<span class="ansi-blue-fg">.</span>data<span class="ansi-blue-fg">.</span>Iterator<span class="ansi-blue-fg">,</span> tf<span class="ansi-blue-fg">.</span>distribute<span class="ansi-blue-fg">.</span>DistributedIterator<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    219</span>             ):
-<span class="ansi-green-fg">--&gt; 220</span><span class="ansi-red-fg">                 </span>opt_outputs <span class="ansi-blue-fg">=</span> multi_step_on_iterator<span class="ansi-blue-fg">(</span>iterator<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    221</span>                 <span class="ansi-green-fg">if</span> <span class="ansi-green-fg">not</span> opt_outputs<span class="ansi-blue-fg">.</span>has_value<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg ansi-bold">    222</span>                     <span class="ansi-green-fg">raise</span> StopIteration
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/util/traceback_utils.py</span> in <span class="ansi-cyan-fg">error_handler</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-fg ansi-bold">    148</span>     filtered_tb <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-fg ansi-bold">    149</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 150</span><span class="ansi-red-fg">       </span><span class="ansi-green-fg">return</span> fn<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    151</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> e<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg ansi-bold">    152</span>       filtered_tb <span class="ansi-blue-fg">=</span> _process_traceback_frames<span class="ansi-blue-fg">(</span>e<span class="ansi-blue-fg">.</span>__traceback__<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-fg">(self, *args, **kwds)</span>
-<span class="ansi-green-fg ansi-bold">    831</span> 
-<span class="ansi-green-fg ansi-bold">    832</span>       <span class="ansi-green-fg">with</span> OptionalXlaContext<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>_jit_compile<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 833</span><span class="ansi-red-fg">         </span>result <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwds<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    834</span> 
-<span class="ansi-green-fg ansi-bold">    835</span>       new_tracing_count <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>experimental_get_tracing_count<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py</span> in <span class="ansi-cyan-fg">_call</span><span class="ansi-blue-fg">(self, *args, **kwds)</span>
-<span class="ansi-green-fg ansi-bold">    876</span>       <span class="ansi-red-fg"># In this case we have not created variables on the first call. So we can</span>
-<span class="ansi-green-fg ansi-bold">    877</span>       <span class="ansi-red-fg"># run the first trace but we should fail if variables are created.</span>
-<span class="ansi-green-fg">--&gt; 878</span><span class="ansi-red-fg">       results = tracing_compilation.call_function(
-</span><span class="ansi-green-fg ansi-bold">    879</span>           args<span class="ansi-blue-fg">,</span> kwds<span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>_variable_creation_config
-<span class="ansi-green-fg ansi-bold">    880</span>       )
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py</span> in <span class="ansi-cyan-fg">call_function</span><span class="ansi-blue-fg">(args, kwargs, tracing_options)</span>
-<span class="ansi-green-fg ansi-bold">    130</span>   args <span class="ansi-blue-fg">=</span> args <span class="ansi-green-fg">if</span> args <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg ansi-bold">    131</span>   kwargs <span class="ansi-blue-fg">=</span> kwargs <span class="ansi-green-fg">if</span> kwargs <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span>
-<span class="ansi-green-fg">--&gt; 132</span><span class="ansi-red-fg">   function = trace_function(
-</span><span class="ansi-green-fg ansi-bold">    133</span>       args<span class="ansi-blue-fg">=</span>args<span class="ansi-blue-fg">,</span> kwargs<span class="ansi-blue-fg">=</span>kwargs<span class="ansi-blue-fg">,</span> tracing_options<span class="ansi-blue-fg">=</span>tracing_options
-<span class="ansi-green-fg ansi-bold">    134</span>   )
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py</span> in <span class="ansi-cyan-fg">trace_function</span><span class="ansi-blue-fg">(args, kwargs, tracing_options)</span>
-<span class="ansi-green-fg ansi-bold">    176</span>       kwargs <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span>
-<span class="ansi-green-fg ansi-bold">    177</span> 
-<span class="ansi-green-fg">--&gt; 178</span><span class="ansi-red-fg">     concrete_function = _maybe_define_function(
-</span><span class="ansi-green-fg ansi-bold">    179</span>         args<span class="ansi-blue-fg">,</span> kwargs<span class="ansi-blue-fg">,</span> tracing_options
-<span class="ansi-green-fg ansi-bold">    180</span>     )
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py</span> in <span class="ansi-cyan-fg">_maybe_define_function</span><span class="ansi-blue-fg">(args, kwargs, tracing_options)</span>
-<span class="ansi-green-fg ansi-bold">    218</span>     )
-<span class="ansi-green-fg ansi-bold">    219</span> 
-<span class="ansi-green-fg">--&gt; 220</span><span class="ansi-red-fg">   current_func_context = function_context.make_function_context(
-</span><span class="ansi-green-fg ansi-bold">    221</span>       tracing_options<span class="ansi-blue-fg">.</span>scope_type
-<span class="ansi-green-fg ansi-bold">    222</span>   )
-
-<span class="ansi-green-fg">/usr/local/lib/python3.12/dist-packages/tensorflow/python/eager/polymorphic_function/function_context.py</span> in <span class="ansi-cyan-fg">make_function_context</span><span class="ansi-blue-fg">(scope_type)</span>
-<span class="ansi-green-fg ansi-bold">     90</span>     in_cross_replica_context <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>strategy_stack<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>replica_context <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># pylint: disable=protected-access</span>
-<span class="ansi-green-fg ansi-bold">     91</span>   <span class="ansi-green-fg">except</span> <span class="ansi-blue-fg">(</span>AttributeError<span class="ansi-blue-fg">,</span> IndexError<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 92</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">pass</span>
-<span class="ansi-green-fg ansi-bold">     93</span> 
-<span class="ansi-green-fg ansi-bold">     94</span>   <span class="ansi-green-fg">if</span> save_context<span class="ansi-blue-fg">.</span>in_save_context<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
+<pre><span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">"/tmp/ipython-input-4239491910.py"</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">3</span>
+<span class="ansi-red-fg">    plt.plot(history_dict[lr], label=f"lr={lr}")</span>
+    ^
+<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> expected an indented block after 'for' statement on line 2
+</pre>
 </div>
 </div>
-</div>
-<div id="cell-6" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Results</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lr <span class="kw">in</span> learning_rates:</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.plot(history_dict[lr], label<span class="op">=</span><span class="ss">f"lr=</span><span class="sc">{</span>lr<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Validation Loss for Different Learning Rates"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Epoch"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Validation Loss"</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>When should they pull the bikes out of rotation for cleaning?</p>
-<div id="cell-8" class="cell" data-outputid="5de9886c-60e8-4a87-c57c-03e5a4f4e16c" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Hour</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>hourly <span class="op">=</span> df.groupby(<span class="st">'hr'</span>)[<span class="st">'total'</span>].mean()</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.plot(hourly.index, hourly.values)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Rentals by Hour"</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Hour of Day"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Rentals"</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="5de9886c-60e8-4a87-c57c-03e5a4f4e16c" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Hour</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>hourly <span class="op">=</span> df.groupby(<span class="st">'hr'</span>)[<span class="st">'total'</span>].mean()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.plot(hourly.index, hourly.values)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Rentals by Hour"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Hour of Day"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Rentals"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -569,17 +512,17 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-9" class="cell" data-outputid="65a07083-0d50-4a04-f36c-dd7ae9a43e5f" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Day of Week</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'day_of_week'</span>] <span class="op">=</span> df[<span class="st">'dteday'</span>].dt.dayofweek  <span class="co"># 0 = Monday</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>daily <span class="op">=</span> df.groupby(<span class="st">'day_of_week'</span>)[<span class="st">'total'</span>].mean()</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.bar(daily.index, daily.values)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Rentals by Day of Week"</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Day of Week (0=Mon)"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Rentals"</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="65a07083-0d50-4a04-f36c-dd7ae9a43e5f" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Day of Week</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'day_of_week'</span>] <span class="op">=</span> df[<span class="st">'dteday'</span>].dt.dayofweek  <span class="co"># 0 = Monday</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>daily <span class="op">=</span> df.groupby(<span class="st">'day_of_week'</span>)[<span class="st">'total'</span>].mean()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.bar(daily.index, daily.values)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Rentals by Day of Week"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Day of Week (0=Mon)"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Rentals"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -588,16 +531,16 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-outputid="e8e96480-fa1d-4c61-8835-e15300ca1a38" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Combined Hour and Day</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'total'</span>, index<span class="op">=</span><span class="st">'hr'</span>, columns<span class="op">=</span><span class="st">'day_of_week'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(pivot, aspect<span class="op">=</span><span class="st">'auto'</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">"Avg Rentals"</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Day of Week"</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Hour"</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Heatmap of Rentals"</span>)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="e8e96480-fa1d-4c61-8835-e15300ca1a38" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rentals by Combined Hour and Day</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pivot <span class="op">=</span> df.pivot_table(values<span class="op">=</span><span class="st">'total'</span>, index<span class="op">=</span><span class="st">'hr'</span>, columns<span class="op">=</span><span class="st">'day_of_week'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(pivot, aspect<span class="op">=</span><span class="st">'auto'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">"Avg Rentals"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Day of Week"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Hour"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Heatmap of Rentals"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -607,55 +550,216 @@ Training with learning rate: 0.0001</code></pre>
 </div>
 </div>
 <p>What can we expect for forcasts into the future? Are we back on track or still recovering?</p>
-<div id="cell-12" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daily Rentals Over Time</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>daily_totals <span class="op">=</span> df.groupby(<span class="st">'dteday'</span>)[<span class="st">'total'</span>].<span class="bu">sum</span>()</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>plt.plot(daily_totals.index, daily_totals.values)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Total Rentals Over Time"</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Date"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Total Rentals"</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="efb8c56e-0cb3-4c64-9687-1a8fab36b05a" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Daily Rentals Over Time</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>daily_totals <span class="op">=</span> df.groupby(<span class="st">'dteday'</span>)[<span class="st">'total'</span>].<span class="bu">sum</span>()</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.plot(daily_totals.index, daily_totals.values)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Total Rentals Over Time"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Date"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Total Rentals"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="starter_bikes_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<div id="cell-13" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average Trends</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>rolling <span class="op">=</span> daily_totals.rolling(window<span class="op">=</span><span class="dv">30</span>).mean()</span>
+</div>
+</div>
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:452}}" data-outputid="0592d10f-3547-447b-8356-c5363fac593f" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Average Trends</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>rolling <span class="op">=</span> daily_totals.rolling(window<span class="op">=</span><span class="dv">30</span>).mean()</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.plot(daily_totals.index, daily_totals.values, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"Daily"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.plot(rolling.index, rolling.values, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">"30-Day Avg"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Trend in Bike Rentals"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="starter_bikes_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:472}}" data-outputid="f6511782-508d-4641-d4af-2bb38c4e05d7" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparing Monthly</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'month'</span>] <span class="op">=</span> df[<span class="st">'dteday'</span>].dt.month</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'month'</span>)[<span class="st">'total'</span>].mean()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.bar(monthly.index, monthly.values)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Rentals by Month"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Month"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Rentals"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="starter_bikes_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}}" data-outputid="98208a1f-edc1-4e44-b600-13d1d216f288" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Atempting Future Prediction</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> build_model(<span class="fl">0.001</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plt.plot(daily_totals.index, daily_totals.values, alpha<span class="op">=</span><span class="fl">0.3</span>, label<span class="op">=</span><span class="st">"Daily"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>plt.plot(rolling.index, rolling.values, color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">"30-Day Avg"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Trend in Bike Rentals"</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train, epochs<span class="op">=</span><span class="dv">30</span>, batch_size<span class="op">=</span><span class="dv">32</span>, verbose<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> model.predict(X_val)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(y_val, predictions)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Actual"</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Predicted"</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Model Predictions"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/30</code></pre>
 </div>
-<div id="cell-14" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparing Monthly</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'month'</span>] <span class="op">=</span> df[<span class="st">'dteday'</span>].dt.month</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>monthly <span class="op">=</span> df.groupby(<span class="st">'month'</span>)[<span class="st">'total'</span>].mean()</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.bar(monthly.index, monthly.values)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Average Rentals by Month"</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Month"</span>)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Average Rentals"</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.12/dist-packages/keras/src/layers/core/dense.py:93: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)</code></pre>
 </div>
-<div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Atempting Future Prediction</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> build_model(<span class="fl">0.001</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train, epochs<span class="op">=</span><span class="dv">30</span>, batch_size<span class="op">=</span><span class="dv">32</span>, verbose<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> model.predict(X_val)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(y_val, predictions)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Actual"</span>)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Predicted"</span>)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Model Predictions"</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 126761.1328 - mae: 256.1093
+
+Epoch 2/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 75683.5312 - mae: 200.5388
+
+Epoch 3/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 68363.9453 - mae: 187.3937
+
+Epoch 4/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 62739.8320 - mae: 177.2837
+
+Epoch 5/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 59169.7383 - mae: 172.6404
+
+Epoch 6/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 58070.2578 - mae: 172.1947
+
+Epoch 7/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 55758.3633 - mae: 167.9120
+
+Epoch 8/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 54478.8281 - mae: 165.5332
+
+Epoch 9/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">10s</span> 2ms/step - loss: 53827.7617 - mae: 164.3397
+
+Epoch 10/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 52059.3750 - mae: 160.6890
+
+Epoch 11/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 51613.4180 - mae: 159.2699
+
+Epoch 12/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 49746.4805 - mae: 155.7126
+
+Epoch 13/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 49534.0000 - mae: 154.3789
+
+Epoch 14/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 48629.0820 - mae: 152.0804
+
+Epoch 15/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 47068.6211 - mae: 148.2944
+
+Epoch 16/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 46263.7852 - mae: 145.5696
+
+Epoch 17/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 45717.3516 - mae: 142.7186
+
+Epoch 18/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 44579.1172 - mae: 140.0195
+
+Epoch 19/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 43617.9453 - mae: 137.9724
+
+Epoch 20/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">9s</span> 2ms/step - loss: 42625.4805 - mae: 135.0622
+
+Epoch 21/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 41845.3984 - mae: 132.9548
+
+Epoch 22/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 41553.8359 - mae: 132.1180
+
+Epoch 23/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 41427.5117 - mae: 131.3552
+
+Epoch 24/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 39540.7109 - mae: 128.5079
+
+Epoch 25/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 39911.1992 - mae: 128.6778
+
+Epoch 26/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 39219.5391 - mae: 128.0282
+
+Epoch 27/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 38160.2383 - mae: 126.3341
+
+Epoch 28/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 37744.0742 - mae: 125.6271
+
+Epoch 29/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">5s</span> 2ms/step - loss: 36712.4336 - mae: 124.4800
+
+Epoch 30/30
+
+<span class="ansi-bold">2812/2812</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">6s</span> 2ms/step - loss: 36453.2734 - mae: 123.9342
+
+<span class="ansi-bold">703/703</span> <span class="ansi-green-fg">━━━━━━━━━━━━━━━━━━━━</span> <span class="ansi-bold">1s</span> 1ms/step
+</pre>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="starter_bikes_files/figure-html/cell-13-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 
 
+</section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
