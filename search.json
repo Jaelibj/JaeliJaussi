@@ -1,12 +1,56 @@
 [
   {
-    "objectID": "Full_Stack/project5.html",
-    "href": "Full_Stack/project5.html",
+    "objectID": "Machine_Learning/project4.html",
+    "href": "Machine_Learning/project4.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
     "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
-      "Full Stack",
+      "Machine Learning",
+      "Project 4"
+    ]
+  },
+  {
+    "objectID": "Machine_Learning/project2.html",
+    "href": "Machine_Learning/project2.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Machine Learning",
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "Machine_Learning/project1.html",
+    "href": "Machine_Learning/project1.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Machine Learning",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Competition/project3.html",
+    "href": "Competition/project3.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Competition",
+      "Project 3"
+    ]
+  },
+  {
+    "objectID": "Competition/project5.html",
+    "href": "Competition/project5.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Competition",
       "Project 5"
     ]
   },
@@ -22,14 +66,98 @@
     ]
   },
   {
-    "objectID": "Full_Stack/project3.html",
-    "href": "Full_Stack/project3.html",
+    "objectID": "Full_Stack/project2.html",
+    "href": "Full_Stack/project2.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
     "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
       "Full Stack",
-      "Project 3"
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "Full_Stack/project1.html",
+    "href": "Full_Stack/project1.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Full Stack",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Cleansing_Projects/project4.html",
+    "href": "Cleansing_Projects/project4.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Data Cleansing",
+      "Project 4"
+    ]
+  },
+  {
+    "objectID": "Cleansing_Projects/project2.html",
+    "href": "Cleansing_Projects/project2.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Data Cleansing",
+      "Project 2"
+    ]
+  },
+  {
+    "objectID": "Cleansing_Projects/project1.html",
+    "href": "Cleansing_Projects/project1.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Data Cleansing",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "story_telling.html",
+    "href": "story_telling.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Story Telling"
+    ]
+  },
+  {
+    "objectID": "story_telling.html#title-2-header",
+    "href": "story_telling.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Story Telling"
+    ]
+  },
+  {
+    "objectID": "ml.html",
+    "href": "ml.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "objectID": "ml.html#title-2-header",
+    "href": "ml.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Machine Learning"
     ]
   },
   {
@@ -110,18 +238,26 @@
     "text": "🌟 Above and Beyond 🌟\nAfter reviewing your findings, the watchdog group would like some additional questions answered:\n\nHow are things affected if you include the “made for TV movies” that have been assigned TV ratings in your analysis, but still exclude unrated movies?\nThey would also like to see a separate report that includes only TV shows.\nFor an upcoming community meeting, the group would like to present a simple chart showing “For Kids” and “For Adults” categories. The easiest way to accomplish this would be to create a new column in your data frame that maps each rating to the appropriate “For Kids” or “For Adults” label, then create a new visualization based on that column."
   },
   {
-    "objectID": "Cleansing_Exploration/project1.html",
-    "href": "Cleansing_Exploration/project1.html",
+    "objectID": "Story_Telling/project3.html",
+    "href": "Story_Telling/project3.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Story Telling",
+      "Project 3"
+    ]
   },
   {
-    "objectID": "Cleansing_Exploration/project2.html",
-    "href": "Cleansing_Exploration/project2.html",
+    "objectID": "Story_Telling/project5.html",
+    "href": "Story_Telling/project5.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Story Telling",
+      "Project 5"
+    ]
   },
   {
     "objectID": "full_stack.html",
@@ -144,36 +280,85 @@
     ]
   },
   {
-    "objectID": "Cleansing_Projects/project5.html",
-    "href": "Cleansing_Projects/project5.html",
+    "objectID": "Module_7_RandomForest_and_Linear_Regression.html",
+    "href": "Module_7_RandomForest_and_Linear_Regression.html",
+    "title": "Jaeli Jaussi - Data Science Portfolio",
+    "section": "",
+    "text": "# Libraries\nimport pandas as pd\nimport numpy as np\nimport os\n\nfrom sklearn.model_selection import train_test_split, RandomizedSearchCV\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import precision_recall_curve\n\nfrom sklearn.metrics import (\n    accuracy_score,\n    confusion_matrix,\n    classification_report,\n    roc_curve,\n    auc)\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nimport kagglehub\n\n# Download latest version\npath = kagglehub.dataset_download(\"reeljojo/default-on-their-credit-card\")\n\nprint(\"Path to dataset files:\", path)\nprint(os.listdir(path))\n\n\n# Load Dataset\nfile_path = os.path.join(path, \"default of credit card clients.xls\")\ndf = pd.read_excel(file_path, header=1)\n\n\n# Clean column names\ndf.columns = df.columns.str.strip()\n\nprint(df.head())\nprint(df.columns.tolist())\n\n\n\nUsing Colab cache for faster access to the 'default-on-their-credit-card' dataset.\nPath to dataset files: /kaggle/input/default-on-their-credit-card\n['default of credit card clients.csv', 'default of credit card clients.xls']\n   ID  LIMIT_BAL  SEX  EDUCATION  MARRIAGE  AGE  PAY_0  PAY_2  PAY_3  PAY_4  \\\n0   1      20000    2          2         1   24      2      2     -1     -1   \n1   2     120000    2          2         2   26     -1      2      0      0   \n2   3      90000    2          2         2   34      0      0      0      0   \n3   4      50000    2          2         1   37      0      0      0      0   \n4   5      50000    1          2         1   57     -1      0     -1      0   \n\n   ...  BILL_AMT4  BILL_AMT5  BILL_AMT6  PAY_AMT1  PAY_AMT2  PAY_AMT3  \\\n0  ...          0          0          0         0       689         0   \n1  ...       3272       3455       3261         0      1000      1000   \n2  ...      14331      14948      15549      1518      1500      1000   \n3  ...      28314      28959      29547      2000      2019      1200   \n4  ...      20940      19146      19131      2000     36681     10000   \n\n   PAY_AMT4  PAY_AMT5  PAY_AMT6  default payment next month  \n0         0         0         0                           1  \n1      1000         0      2000                           1  \n2      1000      1000      5000                           0  \n3      1100      1069      1000                           0  \n4      9000       689       679                           0  \n\n[5 rows x 25 columns]\n['ID', 'LIMIT_BAL', 'SEX', 'EDUCATION', 'MARRIAGE', 'AGE', 'PAY_0', 'PAY_2', 'PAY_3', 'PAY_4', 'PAY_5', 'PAY_6', 'BILL_AMT1', 'BILL_AMT2', 'BILL_AMT3', 'BILL_AMT4', 'BILL_AMT5', 'BILL_AMT6', 'PAY_AMT1', 'PAY_AMT2', 'PAY_AMT3', 'PAY_AMT4', 'PAY_AMT5', 'PAY_AMT6', 'default payment next month']\n\n\n\n# Features\ny = df['default payment next month']\nX = df.drop(['default payment next month', 'ID'], axis=1)\n\n# Train/Split Test\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n\nX_train_raw = X_train.copy()\nX_test_raw = X_test.copy()\n\n# Scale Data\nscaler = StandardScaler()\n\nX_train_scaled = scaler.fit_transform(X_train)\nX_test_scaled = scaler.transform(X_test)\n\n# Logistic Regression\nlr_model = LogisticRegression(max_iter=1000)\nlr_model.fit(X_train_scaled, y_train)\n\ny_pred = lr_model.predict(X_test_scaled)\n\nprint(\"Logistic Regression Accuracy:\", accuracy_score(y_test, y_pred))\nprint(\"\\nClassification Report:\\n\", classification_report(y_test, y_pred))\n\n\nLogistic Regression Accuracy: 0.81\n\nClassification Report:\n               precision    recall  f1-score   support\n\n           0       0.82      0.97      0.89      4687\n           1       0.69      0.24      0.35      1313\n\n    accuracy                           0.81      6000\n   macro avg       0.76      0.60      0.62      6000\nweighted avg       0.79      0.81      0.77      6000\n\n\n\n\n# Parameters\nparam_grid = {\n    'n_estimators': [200, 400, 600],\n    'max_depth': [10, 20, None],\n    'min_samples_split': [2, 5, 10],\n    'min_samples_leaf': [1, 2, 4],\n    'max_features': ['sqrt', 'log2']}\n\nsearch = RandomizedSearchCV(\n    RandomForestClassifier(random_state=42, class_weight='balanced'),\n    param_distributions=param_grid,\n    n_iter=20,\n    cv=3,\n    scoring='recall',\n    n_jobs=-1,\n    verbose=1)\n\nsearch.fit(X_train_raw, y_train)\nprint(\"Best Parameters:\", search.best_params_)\nrf_model = search.best_estimator_\n\nFitting 3 folds for each of 20 candidates, totalling 60 fits\nBest Parameters: {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'log2', 'max_depth': 10}\n\n\n\n# Train Model\nrf_model.fit(X_train_raw, y_train)\n\n# Predictions\nrf_probs = rf_model.predict_proba(X_test_raw)[:, 1]\n\n#for t in [0.5, 0.4, 0.3, 0.2]:\n#    preds = (rf_probs &gt;= t).astype(int)\n#    print(f\"\\nThreshold: {t}\")\n#    print(confusion_matrix(y_test, preds))\n\nrf_pred_adjusted = (rf_probs &gt;= threshold).astype(int)\n\n# Evaluation\nprint(\"Adjusted Threshold Confusion Matrix:\")\nprint(confusion_matrix(y_test, rf_pred_adjusted))\n\nprint(\"\\nAdjusted Threshold Classification Report:\")\nprint(classification_report(y_test, rf_pred_adjusted))\n\n# Commpare\nrf_pred = rf_model.predict(X_test_raw)\n\nprint(\"\\nDefault Random Forest Accuracy:\", accuracy_score(y_test, rf_pred))\nprint(\"\\nDefault Classification Report:\\n\", classification_report(y_test, rf_pred))\n\nAdjusted Threshold Confusion Matrix:\n[[2115 2572]\n [ 179 1134]]\n\nAdjusted Threshold Classification Report:\n              precision    recall  f1-score   support\n\n           0       0.92      0.45      0.61      4687\n           1       0.31      0.86      0.45      1313\n\n    accuracy                           0.54      6000\n   macro avg       0.61      0.66      0.53      6000\nweighted avg       0.79      0.54      0.57      6000\n\n\nDefault Random Forest Accuracy: 0.7786666666666666\n\nDefault Classification Report:\n               precision    recall  f1-score   support\n\n           0       0.87      0.84      0.86      4687\n           1       0.50      0.57      0.53      1313\n\n    accuracy                           0.78      6000\n   macro avg       0.68      0.70      0.69      6000\nweighted avg       0.79      0.78      0.78      6000\n\n\n\n\n# Confusion Matrix\ncm_rf = confusion_matrix(y_test, rf_pred_adjusted)\n\nplt.figure(figsize=(6,4))\nsns.heatmap(cm_rf, annot=True, fmt='d', cmap='Greens')\nplt.title(\"Random Forest Confusion Matrix (Threshold = 0.3)\")\nplt.xlabel(\"Predicted\")\nplt.ylabel(\"Actual\")\nplt.show()\n\n# ROC Curve\nfpr, tpr, _ = roc_curve(y_test, rf_probs)\nroc_auc = auc(fpr, tpr)\n\nprint(\"Random Forest AUC:\", roc_auc)\n\nplt.figure()\nplt.plot(fpr, tpr, label=f\"Random Forest (AUC = {roc_auc:.3f})\")\nplt.plot([0,1], [0,1], linestyle='--')\nplt.xlabel(\"False Positive Rate\")\nplt.ylabel(\"True Positive Rate\")\nplt.title(\"ROC Curve\")\nplt.legend()\nplt.show()\n\n# Precision-Recall vs Threshold\nprecision, recall, thresholds = precision_recall_curve(y_test, rf_probs)\n\nplt.plot(thresholds, recall[:-1], label=\"Recall\")\nplt.plot(thresholds, precision[:-1], label=\"Precision\")\nplt.xlabel(\"Threshold\")\nplt.legend()\nplt.title(\"Precision vs Recall Tradeoff\")\nplt.show()\n\n\n\n\n\n\n\n\nRandom Forest AUC: 0.7779588695604556\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Feature Importance\nrf_importance = pd.DataFrame({\n    \"Feature\": X.columns,\n    \"Importance\": rf_model.feature_importances_\n}).sort_values(by=\"Importance\", ascending=False)\n\nprint(rf_importance.head(10))\n\n# Visual\nplt.figure(figsize=(8,5))\nsns.barplot(\n    data=rf_importance.head(10),\n    x=\"Importance\",\n    y=\"Feature\")\nplt.title(\"Top 10 Important Features\")\nplt.show()\n\n      Feature  Importance\n5       PAY_0    0.248303\n6       PAY_2    0.102158\n8       PAY_4    0.062042\n7       PAY_3    0.054719\n0   LIMIT_BAL    0.048252\n17   PAY_AMT1    0.041703\n10      PAY_6    0.041529\n18   PAY_AMT2    0.039590\n11  BILL_AMT1    0.038333\n20   PAY_AMT4    0.034764\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Cleansing_Exploration/project3.html",
+    "href": "Cleansing_Exploration/project3.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Cleansing_Exploration/project5.html",
+    "href": "Cleansing_Exploration/project5.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "cleansing.html",
+    "href": "cleansing.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
     "crumbs": [
-      "Data Cleansing",
-      "Project 5"
+      "Data Cleansing"
     ]
   },
   {
-    "objectID": "Cleansing_Projects/project4.html",
-    "href": "Cleansing_Projects/project4.html",
-    "title": "Client Report - [Insert Project Title]",
+    "objectID": "cleansing.html#title-2-header",
+    "href": "cleansing.html#title-2-header",
+    "title": "about me",
     "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "text": "MarkDown Basics",
     "crumbs": [
-      "Data Cleansing",
-      "Project 4"
+      "Data Cleansing"
     ]
   },
   {
-    "objectID": "Cleansing_Projects/project3.html",
-    "href": "Cleansing_Projects/project3.html",
+    "objectID": "Cleansing_Exploration/project1.html",
+    "href": "Cleansing_Exploration/project1.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Cleansing_Exploration/project2.html",
+    "href": "Cleansing_Exploration/project2.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "Cleansing_Exploration/project4.html",
+    "href": "Cleansing_Exploration/project4.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "exploration.html",
+    "href": "exploration.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
     "crumbs": [
-      "Data Cleansing",
-      "Project 3"
+      "Data Exploration"
+    ]
+  },
+  {
+    "objectID": "exploration.html#title-2-header",
+    "href": "exploration.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics",
+    "crumbs": [
+      "Data Exploration"
     ]
   },
   {
@@ -197,6 +382,59 @@
       "Story Telling",
       "Project 2"
     ]
+  },
+  {
+    "objectID": "Story_Telling/project4.html",
+    "href": "Story_Telling/project4.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Story Telling",
+      "Project 4"
+    ]
+  },
+  {
+    "objectID": "notebooks/starter_bank.html",
+    "href": "notebooks/starter_bank.html",
+    "title": "Jaeli Jaussi - Data Science Portfolio",
+    "section": "",
+    "text": "# Load Libraries and Data\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error, r2_score\nfrom math import sqrt\n\nhousing = pd.read_csv('https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/housing.csv')\nhousing.head()\n\n# Clean and Categorize Code\nhousing['zipcode'] = housing['zipcode'].astype(str)\n\nhousing['sqft_per_floor'] = housing['sqft_living'] / housing['floors']\n\nfeatures = [\n    \"condition\",\n    \"grade\",\n    \"view\",\n    \"lat\",\n    \"long\",\n    \"sqft_living\",\n    \"sqft_lot\",\n    \"sqft_lot15\",\n    \"sqft_per_floor\"\n]\n\nX = housing[features]\ny = housing['price']\n\nX = X.join(pd.get_dummies(housing['zipcode'], prefix='zip'))\nX = X.dropna()\ny = y.loc[X.index]\n\n# Train and test Split\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# Train Random Forest Model\nrf = RandomForestRegressor(\n    n_estimators=300,\n    random_state=42,\n    max_depth=None,\n    n_jobs=-1\n)\n\nrf.fit(X_train, y_train)\n\n\nRandomForestRegressor(n_estimators=300, n_jobs=-1, random_state=42)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.RandomForestRegressor?Documentation for RandomForestRegressoriFittedRandomForestRegressor(n_estimators=300, n_jobs=-1, random_state=42) \n\n\n\nRMSE = average prediction error in dollars\nR² = how much price variation your model explains 0.65–0.80 is very solid for housing data This = quantifiable evidence of reliability\n\n\n# Cecil's Question\n# Evaluate the Model\ny_pred = rf.predict(X_test)\n\nrmse = sqrt(mean_squared_error(y_test, y_pred))\nr2 = r2_score(y_test, y_pred)\n\nrmse, r2\n\n\n# William's Question\n# Feature Importance\nimportances = pd.Series(rf.feature_importances_, index=X.columns)\nimportances = importances.sort_values(ascending=False)\n\nimportances.head(10)\n\n# Plotting Feature Importance\nplt.figure(figsize=(10,6))\nimportances.head(10).plot(kind='barh')\nplt.title(\"Top 10 Most Important Features for Predicting Price\")\nplt.gca().invert_yaxis()\nplt.show()\n\n\n# Model Reliability Visualization per Cecil\nplt.figure(figsize=(6,6))\nsns.scatterplot(x=y_test, y=y_pred, alpha=0.3)\nplt.xlabel(\"Actual Price\")\nplt.ylabel(\"Predicted Price\")\nplt.title(\"Predicted vs Actual Housing Prices\")\nplt.show()\n\nTight diagonal = good predictions\nScatter = error This visually supports reliability claims.\nModel shows: home features, location\nCould potentially join external data: median price per neighborhood, school neighborhood ratings, walkability ratings\nI built a Random Forest regression model using housing features such as square footage, condition, grade, view, and geographic location to predict home prices. I engineered an additional feature representing square footage per floor to capture how living space is distributed across levels. The model was evaluated using RMSE and R² to provide quantifiable evidence of prediction reliability. Feature importance scores were used to identify which aspects of the property most strongly influence price, addressing stakeholder questions about key drivers of value. Geographic variables were included to support future integration of external neighborhood-level factors.\nAttempting to work with zipcode, lat, long.\n\n# Using \"Homes in area are similiar\"\nzip_stats = housing.groupby('zipcode')['price'].agg([\n    'mean', 'median', 'count'\n]).reset_index()\n\nzip_stats.columns = ['zipcode', 'zip_price_mean', 'zip_price_median', 'zip_count']\n\nhousing = housing.merge(zip_stats, on='zipcode', how='left')\n\nzip_price_mean - average price per area\nzip_count - quantity of homes\n\n# categorize into natural geographical areas\nfrom sklearn.cluster import KMeans\n\ncoords = housing[['lat', 'long']]\n\nkmeans = KMeans(n_clusters=20, random_state=42)\nhousing['geo_cluster'] = kmeans.fit_predict(coords)\n\nX = housing[[\n    \"sqft_living\", \"sqft_lot\", \"condition\", \"grade\", \"view\",\n    \"sqft_lot15\", \"sqft_per_floor\", \"geo_cluster\"\n]]\n\n\n# Creating distance variable\nimport numpy as np\n\n# Approx Seattle city center\nseattle_lat, seattle_long = 47.6062, -122.3321\n\nhousing['dist_to_seattle'] = np.sqrt(\n    (housing['lat'] - seattle_lat)**2 +\n    (housing['long'] - seattle_long)**2\n)\n\n\n# Each zipcode is a redefined category\nhousing_encoded = pd.get_dummies(housing, columns=['zipcode'], prefix='zip')\n\nX = housing_encoded[[\n    \"sqft_living\", \"sqft_lot\", \"condition\", \"grade\", \"view\",\n    \"sqft_lot15\", \"sqft_per_floor\"\n] + [col for col in housing_encoded.columns if col.startswith('zip_')]]\n\n\nhousing['sqft_per_floor'] = housing['sqft_living'] / housing['floors']\n\nfrom sklearn.cluster import KMeans\nkmeans = KMeans(n_clusters=20, random_state=42)\nhousing['geo_cluster'] = kmeans.fit_predict(housing[['lat', 'long']])\n\nzip_stats = housing.groupby('zipcode')['price'].mean().reset_index()\nzip_stats.columns = ['zipcode', 'zip_price_mean']\nhousing = housing.merge(zip_stats, on='zipcode', how='left')\n\nfeatures = [\n    \"sqft_living\",\n    \"sqft_lot\",\n    \"sqft_lot15\",\n    \"condition\",\n    \"grade\",\n    \"view\",\n    \"sqft_per_floor\",\n    \"geo_cluster\",\n    \"zip_price_mean\"\n]\n\nLatitude, longitude, and zipcode do not correlate well with price when treated as raw numerical values. To capture neighborhood-level pricing effects, I transformed location features into meaningful geographic groupings. Homes were clustered into geographic regions using latitude and longitude, creating a neighborhood identifier. Additionally, zipcode-level price averages were computed to capture typical market values by area. These transformations allowed the model to learn area-based pricing patterns and significantly improved predictive performance.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "notebooks/starter_bikes.html",
+    "href": "notebooks/starter_bikes.html",
+    "title": "Learning Rate Experiment",
+    "section": "",
+    "text": "import pandas as pd\nimport tensorflow as tf\nfrom tensorflow import keras\nfrom tensorflow.keras import layers\n\nbikes = pd.read_csv('https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/bikes.csv')\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfrom sklearn.preprocessing import MinMaxScaler\nfrom sklearn.model_selection import train_test_split\n\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense\nfrom tensorflow.keras.optimizers import Adam\nfrom tensorflow.keras.callbacks import ReduceLROnPlateau\n# Load data\ndf = pd.read_csv('https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/bikes.csv')\n\n# Convert date\ndf['dteday'] = pd.to_datetime(df['dteday'])\n\n# Create total rentals (target variable)\ndf['total'] = df['casual'] + df['registered']\n\n# Drop columns we won't use\ndf = df.drop(columns=['casual', 'registered'])\n\n# One-hot encode categorical variables\ndf = pd.get_dummies(df, columns=['season', 'weathersit'], drop_first=True)\n\n# Features and target\nX = df.drop(columns=['dteday', 'total'])\ny = df['total']\n\n# Scale features\nscaler = MinMaxScaler()\nX_scaled = scaler.fit_transform(X)\n\n# Train/test split\nX_train, X_val, y_train, y_val = train_test_split(X_scaled, y, test_size=0.2, random_state=42)"
+  },
+  {
+    "objectID": "notebooks/starter_bikes.html#plotting-results",
+    "href": "notebooks/starter_bikes.html#plotting-results",
+    "title": "Learning Rate Experiment",
+    "section": "Plotting Results",
+    "text": "Plotting Results\n\nfor lr in learning_rates:\n    plt.plot(history_dict[lr], label=f\"lr={lr}\")\n\nplt.title(\"Validation Loss for Different Learning Rates\")\nplt.xlabel(\"Epoch\")\nplt.ylabel(\"Validation Loss\")\nplt.legend()\nplt.show()"
+  },
+  {
+    "objectID": "notebooks/starter_bikes.html#step-by-step-approach",
+    "href": "notebooks/starter_bikes.html#step-by-step-approach",
+    "title": "Learning Rate Experiment",
+    "section": "Step-by-Step Approach",
+    "text": "Step-by-Step Approach\n\nSelect a range of learning rates to test (e.g., 0.1, 0.01, 0.001, 0.0001).\nTrain the neural network using each learning rate.\nMonitor training and validation loss for each model.\nCompare how quickly and smoothly each model converges.\nSelect the learning rate that achieves the lowest validation loss without instability.\nOptionally, apply a learning rate scheduler to adjust the rate during training.\n\n\nConclusion: Trial and Error!!\n\n# Learning Rate Adjustment\nlr_scheduler = ReduceLROnPlateau(\n    monitor='val_loss',\n    factor=0.5,\n    patience=3,\n    verbose=1\n)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
+  },
+  {
+    "objectID": "index.html#title-2-header",
+    "href": "index.html#title-2-header",
+    "title": "about me",
+    "section": "",
+    "text": "MarkDown Basics"
   },
   {
     "objectID": "resume.html",
@@ -241,56 +479,25 @@
     "text": "1600 Royal Mint, London\n\nWarden\nMinted coins\n\n1600 Lucasian professor of Mathematics, Cambridge University"
   },
   {
-    "objectID": "Machine_Learning/project5.html",
-    "href": "Machine_Learning/project5.html",
+    "objectID": "Cleansing_Projects/project5.html",
+    "href": "Cleansing_Projects/project5.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
     "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
-      "Machine Learning",
+      "Data Cleansing",
       "Project 5"
     ]
   },
   {
-    "objectID": "Machine_Learning/project4.html",
-    "href": "Machine_Learning/project4.html",
+    "objectID": "Cleansing_Projects/project3.html",
+    "href": "Cleansing_Projects/project3.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
     "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
-      "Machine Learning",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project3.html",
-    "href": "Machine_Learning/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Machine Learning",
+      "Data Cleansing",
       "Project 3"
-    ]
-  },
-  {
-    "objectID": "exploration.html",
-    "href": "exploration.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Exploration"
-    ]
-  },
-  {
-    "objectID": "exploration.html#title-2-header",
-    "href": "exploration.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Exploration"
     ]
   },
   {
@@ -311,6 +518,28 @@
     "text": "MarkDown Basics",
     "crumbs": [
       "Competition"
+    ]
+  },
+  {
+    "objectID": "Full_Stack/project5.html",
+    "href": "Full_Stack/project5.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Full Stack",
+      "Project 5"
+    ]
+  },
+  {
+    "objectID": "Full_Stack/project3.html",
+    "href": "Full_Stack/project3.html",
+    "title": "Client Report - [Insert Project Title]",
+    "section": "",
+    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Full Stack",
+      "Project 3"
     ]
   },
   {
@@ -336,17 +565,6 @@
     ]
   },
   {
-    "objectID": "Competition/project3.html",
-    "href": "Competition/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Competition",
-      "Project 3"
-    ]
-  },
-  {
     "objectID": "Competition/project4.html",
     "href": "Competition/project4.html",
     "title": "Client Report - [Insert Project Title]",
@@ -358,236 +576,25 @@
     ]
   },
   {
-    "objectID": "Competition/project5.html",
-    "href": "Competition/project5.html",
+    "objectID": "Machine_Learning/project5.html",
+    "href": "Machine_Learning/project5.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
     "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
-      "Competition",
+      "Machine Learning",
       "Project 5"
     ]
   },
   {
-    "objectID": "story_telling.html",
-    "href": "story_telling.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Story Telling"
-    ]
-  },
-  {
-    "objectID": "story_telling.html#title-2-header",
-    "href": "story_telling.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Story Telling"
-    ]
-  },
-  {
-    "objectID": "ml.html",
-    "href": "ml.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Machine Learning"
-    ]
-  },
-  {
-    "objectID": "ml.html#title-2-header",
-    "href": "ml.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Machine Learning"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project2.html",
-    "href": "Machine_Learning/project2.html",
+    "objectID": "Machine_Learning/project3.html",
+    "href": "Machine_Learning/project3.html",
     "title": "Client Report - [Insert Project Title]",
     "section": "",
     "text": "Paste in a template\n\n\n\n\n Back to top",
     "crumbs": [
       "Machine Learning",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Machine_Learning/project1.html",
-    "href": "Machine_Learning/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Machine Learning",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "index.html#title-2-header",
-    "href": "index.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics"
-  },
-  {
-    "objectID": "Story_Telling/project3.html",
-    "href": "Story_Telling/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
       "Project 3"
-    ]
-  },
-  {
-    "objectID": "Story_Telling/project4.html",
-    "href": "Story_Telling/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 4"
-    ]
-  },
-  {
-    "objectID": "Story_Telling/project5.html",
-    "href": "Story_Telling/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Story Telling",
-      "Project 5"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project2.html",
-    "href": "Cleansing_Projects/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Projects/project1.html",
-    "href": "Cleansing_Projects/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Data Cleansing",
-      "Project 1"
-    ]
-  },
-  {
-    "objectID": "cleansing.html",
-    "href": "cleansing.html",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Cleansing"
-    ]
-  },
-  {
-    "objectID": "cleansing.html#title-2-header",
-    "href": "cleansing.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Cleansing"
-    ]
-  },
-  {
-    "objectID": "Cleansing_Exploration/project3.html",
-    "href": "Cleansing_Exploration/project3.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Cleansing_Exploration/project4.html",
-    "href": "Cleansing_Exploration/project4.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Cleansing_Exploration/project5.html",
-    "href": "Cleansing_Exploration/project5.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "notebooks/starter_bikes.html",
-    "href": "notebooks/starter_bikes.html",
-    "title": "Learning Rate Experiment",
-    "section": "",
-    "text": "import pandas as pd\nimport tensorflow as tf\nfrom tensorflow import keras\nfrom tensorflow.keras import layers\n\nbikes = pd.read_csv('https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/bikes.csv')\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nfrom sklearn.preprocessing import MinMaxScaler\nfrom sklearn.model_selection import train_test_split\n\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense\nfrom tensorflow.keras.optimizers import Adam\nfrom tensorflow.keras.callbacks import ReduceLROnPlateau\n# Load data\ndf = pd.read_csv('https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/bikes.csv')\n\n# Convert date\ndf['dteday'] = pd.to_datetime(df['dteday'])\n\n# Create total rentals (target variable)\ndf['total'] = df['casual'] + df['registered']\n\n# Drop columns we won't use\ndf = df.drop(columns=['casual', 'registered'])\n\n# One-hot encode categorical variables\ndf = pd.get_dummies(df, columns=['season', 'weathersit'], drop_first=True)\n\n# Features and target\nX = df.drop(columns=['dteday', 'total'])\ny = df['total']\n\n# Scale features\nscaler = MinMaxScaler()\nX_scaled = scaler.fit_transform(X)\n\n# Train/test split\nX_train, X_val, y_train, y_val = train_test_split(X_scaled, y, test_size=0.2, random_state=42)"
-  },
-  {
-    "objectID": "notebooks/starter_bikes.html#plotting-results",
-    "href": "notebooks/starter_bikes.html#plotting-results",
-    "title": "Learning Rate Experiment",
-    "section": "Plotting Results",
-    "text": "Plotting Results\n\nfor lr in learning_rates:\n    plt.plot(history_dict[lr], label=f\"lr={lr}\")\n\nplt.title(\"Validation Loss for Different Learning Rates\")\nplt.xlabel(\"Epoch\")\nplt.ylabel(\"Validation Loss\")\nplt.legend()\nplt.show()"
-  },
-  {
-    "objectID": "notebooks/starter_bikes.html#step-by-step-approach",
-    "href": "notebooks/starter_bikes.html#step-by-step-approach",
-    "title": "Learning Rate Experiment",
-    "section": "Step-by-Step Approach",
-    "text": "Step-by-Step Approach\n\nSelect a range of learning rates to test (e.g., 0.1, 0.01, 0.001, 0.0001).\nTrain the neural network using each learning rate.\nMonitor training and validation loss for each model.\nCompare how quickly and smoothly each model converges.\nSelect the learning rate that achieves the lowest validation loss without instability.\nOptionally, apply a learning rate scheduler to adjust the rate during training.\n\n\nConclusion: Trial and Error!!\n\n# Learning Rate Adjustment\nlr_scheduler = ReduceLROnPlateau(\n    monitor='val_loss',\n    factor=0.5,\n    patience=3,\n    verbose=1\n)"
-  },
-  {
-    "objectID": "notebooks/starter_bank.html",
-    "href": "notebooks/starter_bank.html",
-    "title": "Jaeli Jaussi - Data Science Portfolio",
-    "section": "",
-    "text": "# Load Libraries and Data\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error, r2_score\nfrom math import sqrt\n\nhousing = pd.read_csv('https://raw.githubusercontent.com/byui-cse/cse450-course/master/data/housing.csv')\nhousing.head()\n\n# Clean and Categorize Code\nhousing['zipcode'] = housing['zipcode'].astype(str)\n\nhousing['sqft_per_floor'] = housing['sqft_living'] / housing['floors']\n\nfeatures = [\n    \"condition\",\n    \"grade\",\n    \"view\",\n    \"lat\",\n    \"long\",\n    \"sqft_living\",\n    \"sqft_lot\",\n    \"sqft_lot15\",\n    \"sqft_per_floor\"\n]\n\nX = housing[features]\ny = housing['price']\n\nX = X.join(pd.get_dummies(housing['zipcode'], prefix='zip'))\nX = X.dropna()\ny = y.loc[X.index]\n\n# Train and test Split\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42\n)\n\n# Train Random Forest Model\nrf = RandomForestRegressor(\n    n_estimators=300,\n    random_state=42,\n    max_depth=None,\n    n_jobs=-1\n)\n\nrf.fit(X_train, y_train)\n\n\nRandomForestRegressor(n_estimators=300, n_jobs=-1, random_state=42)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.RandomForestRegressor?Documentation for RandomForestRegressoriFittedRandomForestRegressor(n_estimators=300, n_jobs=-1, random_state=42) \n\n\n\nRMSE = average prediction error in dollars\nR² = how much price variation your model explains 0.65–0.80 is very solid for housing data This = quantifiable evidence of reliability\n\n\n# Cecil's Question\n# Evaluate the Model\ny_pred = rf.predict(X_test)\n\nrmse = sqrt(mean_squared_error(y_test, y_pred))\nr2 = r2_score(y_test, y_pred)\n\nrmse, r2\n\n\n# William's Question\n# Feature Importance\nimportances = pd.Series(rf.feature_importances_, index=X.columns)\nimportances = importances.sort_values(ascending=False)\n\nimportances.head(10)\n\n# Plotting Feature Importance\nplt.figure(figsize=(10,6))\nimportances.head(10).plot(kind='barh')\nplt.title(\"Top 10 Most Important Features for Predicting Price\")\nplt.gca().invert_yaxis()\nplt.show()\n\n\n# Model Reliability Visualization per Cecil\nplt.figure(figsize=(6,6))\nsns.scatterplot(x=y_test, y=y_pred, alpha=0.3)\nplt.xlabel(\"Actual Price\")\nplt.ylabel(\"Predicted Price\")\nplt.title(\"Predicted vs Actual Housing Prices\")\nplt.show()\n\nTight diagonal = good predictions\nScatter = error This visually supports reliability claims.\nModel shows: home features, location\nCould potentially join external data: median price per neighborhood, school neighborhood ratings, walkability ratings\nI built a Random Forest regression model using housing features such as square footage, condition, grade, view, and geographic location to predict home prices. I engineered an additional feature representing square footage per floor to capture how living space is distributed across levels. The model was evaluated using RMSE and R² to provide quantifiable evidence of prediction reliability. Feature importance scores were used to identify which aspects of the property most strongly influence price, addressing stakeholder questions about key drivers of value. Geographic variables were included to support future integration of external neighborhood-level factors.\nAttempting to work with zipcode, lat, long.\n\n# Using \"Homes in area are similiar\"\nzip_stats = housing.groupby('zipcode')['price'].agg([\n    'mean', 'median', 'count'\n]).reset_index()\n\nzip_stats.columns = ['zipcode', 'zip_price_mean', 'zip_price_median', 'zip_count']\n\nhousing = housing.merge(zip_stats, on='zipcode', how='left')\n\nzip_price_mean - average price per area\nzip_count - quantity of homes\n\n# categorize into natural geographical areas\nfrom sklearn.cluster import KMeans\n\ncoords = housing[['lat', 'long']]\n\nkmeans = KMeans(n_clusters=20, random_state=42)\nhousing['geo_cluster'] = kmeans.fit_predict(coords)\n\nX = housing[[\n    \"sqft_living\", \"sqft_lot\", \"condition\", \"grade\", \"view\",\n    \"sqft_lot15\", \"sqft_per_floor\", \"geo_cluster\"\n]]\n\n\n# Creating distance variable\nimport numpy as np\n\n# Approx Seattle city center\nseattle_lat, seattle_long = 47.6062, -122.3321\n\nhousing['dist_to_seattle'] = np.sqrt(\n    (housing['lat'] - seattle_lat)**2 +\n    (housing['long'] - seattle_long)**2\n)\n\n\n# Each zipcode is a redefined category\nhousing_encoded = pd.get_dummies(housing, columns=['zipcode'], prefix='zip')\n\nX = housing_encoded[[\n    \"sqft_living\", \"sqft_lot\", \"condition\", \"grade\", \"view\",\n    \"sqft_lot15\", \"sqft_per_floor\"\n] + [col for col in housing_encoded.columns if col.startswith('zip_')]]\n\n\nhousing['sqft_per_floor'] = housing['sqft_living'] / housing['floors']\n\nfrom sklearn.cluster import KMeans\nkmeans = KMeans(n_clusters=20, random_state=42)\nhousing['geo_cluster'] = kmeans.fit_predict(housing[['lat', 'long']])\n\nzip_stats = housing.groupby('zipcode')['price'].mean().reset_index()\nzip_stats.columns = ['zipcode', 'zip_price_mean']\nhousing = housing.merge(zip_stats, on='zipcode', how='left')\n\nfeatures = [\n    \"sqft_living\",\n    \"sqft_lot\",\n    \"sqft_lot15\",\n    \"condition\",\n    \"grade\",\n    \"view\",\n    \"sqft_per_floor\",\n    \"geo_cluster\",\n    \"zip_price_mean\"\n]\n\nLatitude, longitude, and zipcode do not correlate well with price when treated as raw numerical values. To capture neighborhood-level pricing effects, I transformed location features into meaningful geographic groupings. Homes were clustered into geographic regions using latitude and longitude, creating a neighborhood identifier. Additionally, zipcode-level price averages were computed to capture typical market values by area. These transformations allowed the model to learn area-based pricing patterns and significantly improved predictive performance.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "Full_Stack/project2.html",
-    "href": "Full_Stack/project2.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 2"
-    ]
-  },
-  {
-    "objectID": "Full_Stack/project1.html",
-    "href": "Full_Stack/project1.html",
-    "title": "Client Report - [Insert Project Title]",
-    "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Full Stack",
-      "Project 1"
     ]
   }
 ]
